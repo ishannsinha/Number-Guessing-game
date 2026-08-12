@@ -1,0 +1,29 @@
+import random
+while True:
+    print("Welcome to the Number Guessing Game!")    
+    
+    a = int(input("Enter the lower limit:"))
+    b = int(input("Enter the upper limit:"))
+    if a<b:
+        number=random.randint(a,b)
+        guess = int(input("Guess the number between" + str(a) + " and " + str(b) + ": "))
+        while guess < a or guess > b:
+            print("Your guess is out of range. Please try again.")
+            guess = int(input("Guess the number between" + str(a) + " and " + str(b) + ": "))  
+        while guess != number:
+            if guess < number:
+                print("Too low! Try again.")
+            else:
+                print("Too high! Try again.")
+            guess = int(input("Guess the number between" + str(a) + " and " + str(b) + ": "))
+        print("Congratulations! You guessed the number", number)
+    else:
+        print("Invalid range. The lower limit must be less than the upper limit.")
+    c = int(input("Do you want to play again? Enter 1 for Yes and 0 for No: "))
+    if c == 1:
+        continue
+    else:
+        print("Thank you for playing the Number Guessing Game!")
+        break
+
+          
